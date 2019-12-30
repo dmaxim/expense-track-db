@@ -65,6 +65,9 @@
     <Build Include="dbo\Tables\ExpenseClassification.sql" />
     <Build Include="dbo\Tables\ExpenseOwner.sql" />
     <Build Include="dbo\Tables\Expense.sql" />
+    <Build Include="dbo\Tables\IncomeClassification.sql" />
+    <Build Include="dbo\Tables\Employer.sql" />
+    <Build Include="dbo\Tables\Income.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="docker\scripts\createDatabase.sql" />
