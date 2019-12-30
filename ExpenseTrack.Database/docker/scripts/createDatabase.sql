@@ -217,6 +217,7 @@ CREATE TABLE dbo.Income
 	EmployerId SMALLINT NOT NULL,
 	BeforeDeductions DECIMAL(8,2) NOT NULL,
 	AfterDeductions DECIMAL(8,2) NOT NULL,
+    TransactionDate DATETIMEOFFSET(2) NOT NULL,
 	CONSTRAINT FK_Income_Classification FOREIGN KEY (IncomeClassificationId) REFERENCES dbo.IncomeClassification(IncomeClassificationId),
 	CONSTRAINT FK_Income_Employer FOREIGN KEY (EmployerId) REFERENCES dbo.Employer(EmployerId)
 )
