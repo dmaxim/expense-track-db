@@ -1,0 +1,11 @@
+﻿version: '3.5'
+
+services: 
+  expensetrack.database:
+    image:  mxinfo.expensetrack.database:latest
+    container_name: mxinfo.expensetrack.database
+    environment:
+      - "ACCEPT_EULA=Y"
+      - "SA_PASSWORD=0greVpRSqDfxgfoflI2c"
+    ports:
+      - "1944:1433"
