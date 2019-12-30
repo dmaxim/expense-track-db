@@ -6,8 +6,10 @@
 	BeforeDeductions DECIMAL(8,2) NOT NULL,
 	AfterDeductions DECIMAL(8,2) NOT NULL,
 	TransactionDate DATETIMEOFFSET(2) NOT NULL,
+	ExpenseOwnerId SMALLINT NOT NULL,
 	CONSTRAINT FK_Income_Classification FOREIGN KEY (IncomeClassificationId) REFERENCES dbo.IncomeClassification(IncomeClassificationId),
-	CONSTRAINT FK_Income_Employer FOREIGN KEY (EmployerId) REFERENCES dbo.Employer(EmployerId)
+	CONSTRAINT FK_Income_Employer FOREIGN KEY (EmployerId) REFERENCES dbo.Employer(EmployerId),
+	CONSTRAINT FK_Income_Owner FOREIGN KEY (ExpenseOwnerId) REFERENCES dbo.ExpenseOwner(ExpenseOwnerId)
 )
 
 GO
@@ -23,5 +25,8 @@ CREATE NONCLUSTERED INDEX IDX_Income_Employer
 GO
 	
 
+CREATE NONCLUSTERED INDEX IDX_Income_Owner
+  ON dbo.Income(ExpenseOwnerId ASC)
+GO
 
 
