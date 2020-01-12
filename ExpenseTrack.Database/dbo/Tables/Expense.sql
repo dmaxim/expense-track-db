@@ -5,7 +5,8 @@
 	ExpenseDescription VARCHAR(255) NOT NULL,
 	ExpenseOwnerId SMALLINT NOT NULL,
 	IncurredDate DATETIMEOFFSET NOT NULL CONSTRAINT DF_Expense_Incurred_Date DEFAULT(GETUTCDATE()),
-	CONSTRAINT FK_Expense_Classification FOREIGN KEY (ExpenseClassificationId) REFERENCES dbo.ExpenseClassification(ExpenseClassificationId),
+	Amount DECIMAL(8,2) NOT NULL, 
+    CONSTRAINT FK_Expense_Classification FOREIGN KEY (ExpenseClassificationId) REFERENCES dbo.ExpenseClassification(ExpenseClassificationId),
 	CONSTRAINT FK_Expense_Owner FOREIGN KEY (ExpenseOwnerId) REFERENCES dbo.ExpenseOwner(ExpenseOwnerId)
 
 )
