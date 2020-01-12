@@ -2,7 +2,7 @@
 
 services: 
   expensetrack.database:
-    image:  mxinfo.expensetrack.database:latest
+    image:  dmaxim/mxinfo.expensetrack.database:latest
     container_name: mxinfo.expensetrack.database
     environment:
       - "ACCEPT_EULA=Y"
