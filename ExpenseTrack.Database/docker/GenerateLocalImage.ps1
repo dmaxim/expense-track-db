@@ -15,7 +15,13 @@ docker exec mxinfo.expensetrack.temp sh -c "/opt/scripts/initialize.sh '$APP_USE
 
 Write-Host "Generating Final Image"
 
+<<<<<<< HEAD
 docker commit mxinfo.expensetrack.temp dmaxim/mxinfo.expensetrack.database:v1.3
+=======
+
+docker commit mxinfo.expensetrack.temp dmaxim/mxinfo.expensetrack.database:v1.2
+>>>>>>> 95dd333d7c515f192fcec04da1bfa828dd934df5
+
 
 Write-Host "Tear down intermediate containers"
 
