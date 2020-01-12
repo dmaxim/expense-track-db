@@ -154,7 +154,7 @@ CREATE TABLE dbo.ExpenseOwner
 
 GO
 
-PRINT N'Creating dbo.Expense'
+PRINT N'Creating dbo.Expense with amount field'
 GO
 
 CREATE TABLE dbo.Expense
@@ -164,7 +164,7 @@ CREATE TABLE dbo.Expense
 	ExpenseDescription VARCHAR(255) NOT NULL,
 	ExpenseOwnerId SMALLINT NOT NULL,
 	IncurredDate DATETIMEOFFSET NOT NULL CONSTRAINT DF_Expense_Incurred_Date DEFAULT(GETUTCDATE()),
-    Amount DECIMAL(8,2) NOT NULL, 
+  Amount DECIMAL(8,2) NOT NULL, 
 	CONSTRAINT FK_Expense_Classification FOREIGN KEY (ExpenseClassificationId) REFERENCES dbo.ExpenseClassification(ExpenseClassificationId),
 	CONSTRAINT FK_Expense_Owner FOREIGN KEY (ExpenseOwnerId) REFERENCES dbo.ExpenseOwner(ExpenseOwnerId)
 
